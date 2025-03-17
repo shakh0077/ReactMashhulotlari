@@ -40,7 +40,7 @@ const slides = [
 const Rooms = () => {
   return (
     <div className="bg-[#FCF8F3]">
-            <div className="max-w-7xl mx-auto py-10 px-5 flex flex-col  md:flex-row items-center gap-10">
+            <div className=" mx-auto py-10 px-5 flex flex-col  md:flex-row md:mx-auto items-center gap-10 lg:w-[1440px]">
       <div className="w-full md:w-1/2">
         <h2 className="text-4xl font-bold text-gray-900">
           50+ Beautiful rooms inspiration

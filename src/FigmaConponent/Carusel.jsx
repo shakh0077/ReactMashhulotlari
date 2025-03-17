@@ -52,14 +52,14 @@ const slides = [
 ];
 
 const Carousel = () => {
-  const swiperRef = useRef(null); // Swiper reference yaratamiz
+  const swiperRef = useRef(null); 
 
   return (
     <div className="bg-[#FCF8F3] relative">
       <div className="relative w-full max-w-[1440px] mx-auto">
         <Swiper
           modules={[Navigation, Pagination, Autoplay]}
-          onSwiper={(swiper) => (swiperRef.current = swiper)} // Swiper ni ref ga saqlaymiz
+          onSwiper={(swiper) => (swiperRef.current = swiper)}
           pagination={{ clickable: true }}
           autoplay={{ delay: 4000 }}
           loop={true}
@@ -89,12 +89,12 @@ const Carousel = () => {
         </Swiper>
 
         <button
-          onClick={() => swiperRef.current?.slidePrev()} // Oldingi slaydga o'tish
+          onClick={() => swiperRef.current?.slidePrev()} 
           className="absolute right-16 top-6 transform -translate-y-1/2 active:bg-[#edac84] bg-orange-200 text-white p-3 rounded-full z-10">
           <FaArrowLeft />
         </button>
         <button
-          onClick={() => swiperRef.current?.slideNext()} // Keyingi slaydga o'tish
+          onClick={() => swiperRef.current?.slideNext()} 
           className="absolute right-5 top-6 transform -translate-y-1/2 active:bg-[#edac84] bg-orange-200 text-white p-3 rounded-full z-10">
           <FaArrowRight />
         </button>

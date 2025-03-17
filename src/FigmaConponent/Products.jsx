@@ -50,7 +50,7 @@ const Products = () => {
             <div className='text-center pb-8'>
                 <h1 className='text-[#3A3A3A] text-3xl font-bold'>Our Products</h1>
             </div>
-            <div className='grid grid-cols-4 gap-8'>
+            <div className='grid grid-cols-1 gap-4 md:grid-cols-3 lg:grid-cols-4 lg:gap-8'>
                 <div className='w-[285px] h-[446px]'>
                     <img src={Product} alt="rasm" />
                     <div className='bg-[#F4F5F7] p-4'>
