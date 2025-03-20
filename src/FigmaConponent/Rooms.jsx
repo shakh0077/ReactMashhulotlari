@@ -39,8 +39,8 @@ const slides = [
 
 const Rooms = () => {
   return (
-    <div className="bg-[#FCF8F3]">
-            <div className=" mx-auto py-10 px-5 flex flex-col  md:flex-row md:mx-auto items-center gap-10 lg:w-[1440px]">
+    <div id="rooms" className="bg-[#FCF8F3]">
+            <div className=" mx-auto py-10 px-5 flex flex-col w-full  md:flex-row md:mx-auto items-center gap-10 lg:max-w-[1440px]">
       <div className="w-full md:w-1/2">
         <h2 className="text-4xl font-bold text-gray-900">
           50+ Beautiful rooms inspiration
@@ -49,7 +49,7 @@ const Rooms = () => {
           Our designer already made a lot of beautiful prototype of rooms that inspire you
         </p>
         <button className="mt-6 bg-orange-500 text-white px-5 py-3 rounded-md">
-          Explore More
+          <a href="#future">Explore More</a>
         </button>
       </div>
 

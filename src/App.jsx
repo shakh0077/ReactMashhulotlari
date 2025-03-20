@@ -4,8 +4,10 @@
 // import Update from "./Crud/Update"
 // import Read from "./Crud/Read"
 
-import RouterFig from "./RouterFigma/RouterFig"
+// import Mui from "./AntDesign/Mui"
 
+import RouterFig from "./RouterFigma/RouterFig"
+import i18n from "./i18n/i18n"
 
 
 function App() {
@@ -23,6 +25,7 @@ function App() {
 
     {/* <UseMemo/> */}
     <RouterFig/>
+    {/* <Mui/> */}
     </>
   )
 }

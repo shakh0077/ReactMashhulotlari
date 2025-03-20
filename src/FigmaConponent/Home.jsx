@@ -3,14 +3,16 @@ import { FaRegHeart } from 'react-icons/fa'
 import { FiShoppingCart } from 'react-icons/fi'
 import { IoSearch } from 'react-icons/io5'
 import Oybek from './Imglar/Oybek.jpg'
+import Mui from '../AntDesign/Mui'
+// import Lang from './Lang'
 
 const Home = () => {
   return (
     <>
     <div className='bg-[#F9F1E7]'>
-    <div className=' mx-auto px-5 bg-[#F9F1E7] lg:w-[1440px]'>
+    <div className=' mx-auto px-5 w-full bg-[#F9F1E7] lg:max-w-[1440px]'>
         <div className='px-25 py-10   gap-12 justify-between items-center md:flex   '>
-            <h1 className='text-black font-bold text-2xl'>Funiro.</h1>
+            <h1 className='text-black mb-2 font-bold text-2xl'>Funiro.</h1>
             <div className='flex gap-10 items-center '>
                 <select className='bg-transparent text-[#3A3A3A]'>
                     <option value="products">Products</option>
@@ -24,9 +26,14 @@ const Home = () => {
                 </select>
                 <h2 className='hidden md:block'>Inspirations</h2>
             </div>
+
             <div className='relative hidden md:block'>
                 <IoSearch className='absolute top-3 left-2 w-5 h-5' />
                 <input className='w-[473px] h-[45px] px-11 py-3 p' type="text" placeholder='Search for minimalist chair' />
+            </div>
+            <div className='flex items-center gap-1'>
+            <Mui/>
+            {/* <Lang/> */}
             </div>
             <div className='hidden  items-center gap-8 md:flex '>
                 <FaRegHeart />

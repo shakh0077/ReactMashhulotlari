@@ -51,7 +51,7 @@ const slides = [
   },
 ];
 
-const Carousel = () => {
+const Carusel = () => {
   const swiperRef = useRef(null); 
 
   return (
@@ -68,17 +68,17 @@ const Carousel = () => {
           {slides.map((slide) => (
             <SwiperSlide key={slide.id} className="relative mt-[50px]">
               <div
-                className="w-[1434px] h-[553px] mx-auto flex items-center bg-cover bg-center"
+                className="max-w-[1434px] h-[553px] mx-auto flex items-center bg-cover bg-center"
                 style={{ backgroundImage: `url(${slide.bgUrl})` }}>
-                <div className="w-[498px] absolute bottom-20 h-[553px] bg-white/60 backdrop-blur-lg p-14 shadow-lg rounded-md ml-20">
-                  <h2 className="text-5xl pt-5 font-bold text-[#3A3A3A]">{slide.title}</h2>
-                  <p className="text-[#898989] mt-5">{slide.description}</p>
-                  <button className="mt-12 w-[374px] h-[78px] bg-[#E89F71] text-white px-6 py-3 ">
-                    {slide.buttonText}
+                <div className="w-[298px] ml-2 bg-white/20 p-5 absolute top-2 h-[303px] lg:-top-12 lg:bg-white/40 backdrop-blur-lg lg:w-[498px] lg:h-[553px]  lg:p-14 shadow-lg rounded-md lg:ml-20">
+                  <h2 className="text-xl  pt-5 font-bold text-[#3A3A3A] lg:text-5xl">{slide.title}</h2>
+                  <p className="text-[#898989] mt-2 lg:mt-5">{slide.description}</p>
+                  <button className="mt-5 w-[174px] h-[48px] bg-[#E89F71] text-white px-6 py-3 lg:w-[374px] lg:12 lg:h-[48px] ">
+                    <a href="#products">{slide.buttonText}</a>
                   </button>
                 </div>
 
-                <div className="absolute bottom-10 right-28 w-[294px] bg-white/60 backdrop-blur-lg p-6 shadow-md rounded-md">
+                <div className="absolute bottom-12 right-3.5  w-[298px] bg-white/40 backdrop-blur-lg p-6 shadow-md rounded-md lg:bottom-10 lg:right-28">
                   <h3 className="text-lg font-semibold">{slide.product.name}</h3>
                   <p className="text-gray-500">{slide.product.description}</p>
                   <p className="text-black font-bold mt-2">{slide.product.price}</p>
@@ -103,4 +103,4 @@ const Carousel = () => {
   );
 };
 
-export default Carousel;
+export default Carusel;
