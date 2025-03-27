@@ -6,13 +6,15 @@
 
 // import Mui from "./AntDesign/Mui"
 
+import { useContext } from "react"
 import RouterFig from "./RouterFigma/RouterFig"
-import i18n from "./i18n/i18n"
+import { ThemeContext } from "./Context/GlobalContext";
 
 
 function App() {
+  const {theme,setTheme, lang, setLang} = useContext(ThemeContext);
+  console.log(theme,lang)
   return (
-    
     <>
     {/* <BrowserRouter>
     <Routes>
@@ -26,6 +28,7 @@ function App() {
     {/* <UseMemo/> */}
     <RouterFig/>
     {/* <Mui/> */}
+   
     </>
   )
 }

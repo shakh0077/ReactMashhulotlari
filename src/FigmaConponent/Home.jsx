@@ -1,51 +1,86 @@
-import React from 'react'
-import { FaRegHeart } from 'react-icons/fa'
-import { FiShoppingCart } from 'react-icons/fi'
-import { IoSearch } from 'react-icons/io5'
-import Oybek from './Imglar/Oybek.jpg'
-import Mui from '../AntDesign/Mui'
-// import Lang from './Lang'
+import React, { useContext } from "react";
+import { FaMoon, FaRegHeart } from "react-icons/fa";
+import { FiShoppingCart } from "react-icons/fi";
+import { ImSun } from "react-icons/im";
+import { IoSearch } from "react-icons/io5";
+import { ThemeContext } from "../Context/GlobalContext";
+
+const translations = {
+  en: {
+    rooms: "Rooms",
+    products: "Products",
+    inspirations: "Inspirations",
+    searchPlaceholder: "Search for minimalist chair",
+    dark: "Dark",
+    light: "Light",
+  },
+  uz: {
+    rooms: "Xonalar",
+    products: "Mahsulotlar",
+    inspirations: "Ilhomlar",
+    searchPlaceholder: "Minimalist stulni qidiring",
+    dark: "Tungi",
+    light: "Kunduzgi",
+  },
+};
 
 const Home = () => {
+  const { theme, setTheme, lang, setLang } = useContext(ThemeContext);
+
   return (
-    <>
-    <div className='bg-[#F9F1E7]'>
-    <div className=' mx-auto px-5 w-full bg-[#F9F1E7] lg:max-w-[1440px]'>
-        <div className='px-25 py-10   gap-12 justify-between items-center md:flex   '>
-            <h1 className='text-black mb-2 font-bold text-2xl'>Funiro.</h1>
-            <div className='flex gap-10 items-center '>
-                <select className='bg-transparent text-[#3A3A3A]'>
-                    <option value="products">Products</option>
-                    <option value="rooms">Rooms</option>
-                    <option value="inspirations">Inspirations</option>
-                </select>
-                <select className='bg-transparent text-[#3A3A3A]'>
-                    <option value="products">Rooms</option>
-                    <option value="rooms">Products</option>
-                    <option value="inspirations">Inspirations</option>
-                </select>
-                <h2 className='hidden md:block'>Inspirations</h2>
-            </div>
+    <div className={theme === "dark" ? "bg-gray-800 text-white" : "bg-[#F9F1E7] text-black"}>
+      <div className="mx-auto px-5 w-full lg:max-w-[1440px]">
+        <div className="px-25 py-10 gap-12 justify-between items-center md:flex">
+          <h1 className="flex justify-between px-1 items-center mb-2 font-bold text-2xl">
+            Funiro.
+          </h1>
 
-            <div className='relative hidden md:block'>
-                <IoSearch className='absolute top-3 left-2 w-5 h-5' />
-                <input className='w-[473px] h-[45px] px-11 py-3 p' type="text" placeholder='Search for minimalist chair' />
-            </div>
-            <div className='flex items-center gap-1'>
-            <Mui/>
-            {/* <Lang/> */}
-            </div>
-            <div className='hidden  items-center gap-8 md:flex '>
-                <FaRegHeart />
-                <FiShoppingCart />
-                <img src={Oybek} alt="rasmlar" className='w-10 h-10 rounded-full object-cover' />
-            </div>
-            
+          {/* Menyu bo‘limi */}
+          <div className="hidden gap-10 items-center lg:flex">
+            <a href="#rooms">{translations[lang].rooms}</a>
+            <a href="#future">{translations[lang].products}</a>
+            <a href="#footer">{translations[lang].inspirations}</a>
+          </div>
+
+          {/* Qidiruv qutisi */}
+          <div className="relative hidden md:block">
+            <IoSearch className="absolute top-3 left-2 w-5 h-5" />
+            <input
+              className="w-[473px] h-[45px] px-11 py-3 p"
+              type="text"
+              placeholder={translations[lang].searchPlaceholder}
+            />
+          </div>
+
+          {/* Tema va til tanlash */}
+          <div className="flex items-center gap-3">
+            <button className="border px-1.5 py-1 flex items-center gap-1" onClick={() => setTheme("dark")}>
+              <FaMoon />
+              {translations[lang].dark}
+            </button>
+            <button className="border px-1.5 py-1 flex items-center gap-1" onClick={() => setTheme("light")}>
+              <ImSun />
+              {translations[lang].light}
+            </button>
+            <select
+              className="bg-transparent"
+              value={lang}
+              onChange={(e) => setLang(e.target.value)}
+            >
+              <option className="text-black" value="en">English</option>
+              <option className="text-black" value="uz">Uzbek</option>
+            </select>
+          </div>
+
+          {/* Yurak va savatcha */}
+          <div className="hidden items-center gap-8 md:flex">
+            <FaRegHeart />
+            <FiShoppingCart />
+          </div>
         </div>
-    </div> 
+      </div>
     </div>
-    </>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;

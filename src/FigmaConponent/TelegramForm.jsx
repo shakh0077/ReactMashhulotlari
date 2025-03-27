@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { toast } from "react-toastify";
 
 const TelegramForm = () => {
   const [formData, setFormData] = useState({
@@ -13,7 +14,6 @@ const TelegramForm = () => {
   const chat_id = "-1002259806656";
   const telegramAPI = `https://api.telegram.org/bot${token}/sendMessage`;
 
-  // Inputni yangilash funksiyasi
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
@@ -43,6 +43,7 @@ const TelegramForm = () => {
       const data = await response.json();
 
       if (data.ok) {
+        toast.success("jo'natildi")
         setResponseMessage("✅ Xabar muvaffaqiyatli yuborildi!");
         setFormData({ name: "", email: "", message: "" }); // Formani tozalash
       } else {
@@ -54,7 +55,14 @@ const TelegramForm = () => {
   };
 
   return (
-    <div className="max-w-md mx-auto mt-10 p-6 bg-white s rounded-md">
+    <div className="max-w-md mx-auto absolute top-0  mt-10 p-6 bg-white rounded-md">
+      {/* ✅ Xabar holati tepada chiqadi */}
+      {responseMessage && (
+        <p className="mb-4 text-center text-green-600 font-semibold bg-green-100 p-2 rounded">
+          {responseMessage}
+        </p>
+      )}
+
       <h2 className="text-2xl font-bold mb-4">Biz bilan bog‘lanish</h2>
       <form onSubmit={handleSubmit}>
         <input
@@ -90,9 +98,6 @@ const TelegramForm = () => {
           Yuborish
         </button>
       </form>
-      {responseMessage && (
-        <p className="mt-4 text-center text-green-600">{responseMessage}</p>
-      )}
     </div>
   );
 };
