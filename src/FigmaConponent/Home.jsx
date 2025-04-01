@@ -34,7 +34,7 @@ const Home = () => {
           <h1 className="flex justify-between px-1 items-center mb-2 font-bold text-2xl">
             Funiro.
           </h1>
-
+       
           {/* Menyu bo‘limi */}
           <div className="hidden gap-10 items-center lg:flex">
             <a href="#rooms">{translations[lang].rooms}</a>
