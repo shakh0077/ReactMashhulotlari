@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from 'react';
 import { GiTrophyCup } from 'react-icons/gi';
 import { useTranslation } from "react-i18next";
-import icon1 from "./Imglar/icon1.svg";
+import icon1 from './Imglar/icon1.svg';
 import icon2 from './Imglar/icon2.svg';
 import icon3 from './Imglar/icon3.svg';
 import Product from './Imglar/Product.svg';
