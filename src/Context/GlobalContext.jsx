@@ -1,21 +1,21 @@
-import i18next from "i18next";
-import { createContext, useEffect, useState } from "react";
+import i18next from 'i18next';
+import { createContext, useEffect, useState } from 'react';
 
 
 export const ThemeContext = createContext();
 
 const GlobalContext = ({ children }) => {
-    const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
-    const [lang, setLang] = useState(localStorage.getItem("lang") || "en");
+    const [theme, setTheme] = useState(localStorage.getItem('theme') || 'light');
+    const [lang, setLang] = useState(localStorage.getItem('lang') || 'en');
 
     useEffect(() => {
-        document.documentElement.setAttribute("data-theme", theme);
-        localStorage.setItem("theme", theme);
+        document.documentElement.setAttribute('data-theme', theme);
+        localStorage.setItem('theme', theme);
     }, [theme]);
 
     useEffect(() => {
         i18next.changeLanguage(lang);
-        localStorage.setItem("lang", lang);
+        localStorage.setItem('lang', lang);
     }, [lang]);
 
     return (

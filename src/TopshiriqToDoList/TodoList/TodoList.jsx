@@ -1,12 +1,12 @@
-import { useReducer } from "react";
+import { useReducer } from 'react';
 function reducer(state, action) {
   switch (action.type) {
-    case "INC_COUNTER":
+    case 'INC_COUNTER':
       return {
         ...state,
         counter: state.counter + 1,
       };
-    case "DEC_COUNTER":
+    case 'DEC_COUNTER':
       return {
         ...state,
         counter: state.counter - 1,
@@ -23,8 +23,8 @@ const TodoList = () => {
   return (
     <div>
       <h1>Counter: {state.counter}</h1>
-      <button onClick={() => dispatch({ type: "INC_COUNTER" })}>Inc</button>
-      <button onClick={() => dispatch({ type: "DEC_COUNTER" })}>Dec</button>
+      <button onClick={() => dispatch({ type: 'INC_COUNTER' })}>Inc</button>
+      <button onClick={() => dispatch({ type: 'DEC_COUNTER' })}>Dec</button>
     </div>
   );
 };

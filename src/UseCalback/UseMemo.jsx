@@ -10,7 +10,7 @@ const UseMemo = () => {
   }, [count, data]);
 
   return (
-    <div style={{ textAlign: "center", marginTop: "50px" }}>
+    <div style={{ textAlign: 'center', marginTop: '50px' }}>
       <h1>Counter App</h1>
       <h2>Count: {count}</h2>
       <h3>Multiplied Value: {calculatedValue}</h3>

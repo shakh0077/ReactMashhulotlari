@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef } from 'react';
 
 function  Animation() {
   const [darkMode, setDarkMode] = useState(false);
@@ -25,14 +25,14 @@ function  Animation() {
 
   return (
     <div style={{
-      backgroundColor: darkMode ? "#333" : "#fff",
-      color: darkMode ? "#fff" : "#000",
-      padding: "20px",
-      textAlign: "center"
+      backgroundColor: darkMode ? '#333' : '#fff',
+      color: darkMode ? '#fff' : '#000',
+      padding: '20px',
+      textAlign: 'center'
     }}>
-      <h1>{darkMode ? "Dark Mode" : "Light Mode"}</h1>
+      <h1>{darkMode ? 'Dark Mode' : 'Light Mode'}</h1>
       <button onClick={() => setDarkMode(!darkMode)}>
-        {darkMode ? "Switch to Light Mode" : "Switch to Dark Mode"}
+        {darkMode ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
       </button>
 
       <div>
